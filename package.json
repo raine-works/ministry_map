@@ -1,0 +1,32 @@
+{
+	"name": "ministry-map",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"dev": "turbo run dev --parallel",
+		"build": "turbo run build",
+		"serve": "turbo run serve --parallel",
+		"lint": "turbo run lint",
+		"test": "turbo run test",
+		"check": "turbo run check",
+		"format": "prettier --write \"**/*.{json,js,ts,md,svelte}\"",
+		"clean": "del-cli ./**/build/ ./**/.svelte-kit/ ./**/node_modules/ ./**/.turbo/"
+	},
+	"devDependencies": {
+		"@mm/eslint-config-custom": "workspace:*",
+		"@mm/tsconfig": "workspace:*",
+		"del-cli": "^5.1.0",
+		"prettier": "^3.0.3",
+		"prettier-plugin-svelte": "^3.0.3",
+		"svelte": "^4.2.1",
+		"turbo": "^1.10.14"
+	},
+	"workspaces": [
+		"apps/*",
+		"packages/*"
+	],
+	"engines": {
+		"bun": ">=1.0.0",
+		"node": ">=18.0.0"
+	}
+}

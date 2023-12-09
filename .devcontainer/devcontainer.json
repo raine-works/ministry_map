@@ -1,0 +1,32 @@
+{
+	"name": "Ministry Map",
+	"image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+	"postAttachCommand": "git config --global diff.tool ...",
+	"postStartCommand": "bash .devcontainer/scripts/post-start.sh",
+	"forwardPorts": [3000],
+	"otherPortsAttributes": {
+		"onAutoForward": "ignore"
+	},
+	"mounts": [
+		"source=${env:HOME}${env:USERPROFILE}/.ssh,target=/home/vscode/.ssh,type=bind"
+	],
+	"containerEnv": {
+		"BUN_ENV": "development"
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"esbenp.prettier-vscode",
+				"bradlc.vscode-tailwindcss",
+				"dbaeumer.vscode-eslint",
+				"svelte.svelte-vscode",
+				"Gruntfuggly.todo-tree"
+			]
+		}
+	},
+	"runArgs": ["--network=host"]
+}
