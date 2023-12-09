@@ -7,6 +7,7 @@ export const useTestRoute = router({
 	}),
 
 	testOnClick: publicProcedure.query(async () => {
+		await Bun.sleep(5000)
 		return 'You Clicked Me'
 	})
 })

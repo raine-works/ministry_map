@@ -5,7 +5,7 @@ import adapter from 'svelte-adapter-bun'
 const config = {
 	preprocess: vitePreprocess(),
 	kit: {
-		adapter: adapter({ out: '.build' })
+		adapter: adapter({ out: '.build', dynamic_origin: true })
 	}
 }
 
